@@ -1,73 +1,49 @@
 # 🎮 Torneo de Videojuegos – Aplicación Web con Flask
 
-Aplicación web para gestionar un torneo de videojuegos, desarrollada con **Python, Flask, SQLite y Plotly**.
+Aplicación web para la gestión de un torneo de videojuegos. Permite el registro de usuarios, administración de juegos y participantes, y visualización de estadísticas con gráficas interactivas.
 
-Permite el registro de participantes, administración de juegos, puntuaciones, y visualización de estadísticas mediante gráficas interactivas.
+---
 
-## 📦 Tecnologías utilizadas
+## 🚀 Tecnologías Utilizadas
 
-- Python 3.8+
-- Flask
-- SQLite
-- Plotly
-- Bootstrap 5
-- Flask-Login para autenticación
-- Flask-SQLAlchemy para ORM
+- **Python 3**
+- **Flask**
+- **Flask-WTF**
+- **Flask-Login**
+- **Flask-Bootstrap**
+- **SQLite**
+- **Plotly**
+- **Bootstrap 5**
 
-## ⚙️ Instalación paso a paso (Ubuntu)
+---
 
-### 1. Clonar el repositorio
+## 🧰 Requisitos Previos
+
+Asegúrate de tener instalado:
+
+- Python 3.8 o superior
+- Git (opcional)
+- `pip` (gestor de paquetes de Python)
+- Virtualenv (opcional pero recomendado)
+
+---
+
+## 📦 Instalación paso a paso (Ubuntu)
 
 ```bash
-git clone https://github.com/xsiles13/torneo-videojuegos.git
-cd torneo-videojuegos
-```
+# 1. Clonar el repositorio o descargar el proyecto
+git clone https://github.com/xsiles13/torneo_videojuegos.git
+cd torneo_videojuegos
 
-### 2. Crear y activar el entorno virtual
-
-```bash
-sudo apt update
-sudo apt install python3-venv -y
-
+# 2. Crear entorno virtual (opcional pero recomendado)
 python3 -m venv entorno
 source entorno/bin/activate
-```
 
-### 3. Instalar dependencias del proyecto
+# 3. Instalar dependencias
+pip install -r requerimientos.txt
 
-```bash
-pip install -r requirements.txt
-```
+# 4. Crear la base de datos SQLite
+# (la base de datos se crea automáticamente al ejecutar la app por primera vez)
 
-### 4. Ejecutar la aplicación
-
-```bash
+# 5. Ejecutar la aplicación
 python run.py
-```
-
-Esto ejecutará la aplicación en modo desarrollo y creará automáticamente la base de datos torneo.db en la carpeta database/ si no existe.
-
-Accede desde tu navegador en:
-🌐 http://localhost:5000
-
-## Anexo
-
-### 🧪 Usuario administrador
-
-1. Regístrate desde la ruta /registro.
-
-2. Accede al archivo torneo.db usando un editor SQLite como DB Browser for SQLite o vía línea de comandos.
-
-3. En la tabla usuario, cambia el campo rol de "usuario" a "admin".
-
-Esto te dará acceso al panel de administración para crear/editar/eliminar juegos y participantes.
-
-### 📊 Visualización de estadísticas
-
-Accede a /graficas para ver el promedio de puntuaciones por juego.
-
-## 📬 Contacto y soporte
-
-Este proyecto ha sido desarrollado como parte de un ejercicio académico.
-
-Para dudas, mejoras o colaboración, puedes contactarme vía GitHub o correo electrónico.
