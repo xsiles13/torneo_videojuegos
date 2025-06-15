@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block titulo %}Registro{% endblock %}
+{% block contenido %}
+<h2>Registro de usuario</h2>
+<form method="POST">
+  {{ formulario.hidden_tag() }}
+  <div class="mb-3">
+    {{ formulario.nombre.label }} {{ formulario.nombre(class="form-control") }}
+  </div>
+  <div class="mb-3">
+    {{ formulario.correo.label }} {{ formulario.correo(class="form-control") }}
+  </div>
+  <div class="mb-3">
+    {{ formulario.contraseña.label }} {{ formulario.contraseña(class="form-control") }}
+  </div>
+  <div class="mb-3">
+    {{ formulario.confirmar_contraseña.label }} {{ formulario.confirmar_contraseña(class="form-control") }}
+  </div>
+  <button type="submit" class="btn btn-success">{{ formulario.enviar.label }}</button>
+</form>
+{% endblock %}

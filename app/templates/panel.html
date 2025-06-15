@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block titulo %}Panel{% endblock %}
+{% block contenido %}
+<h2>Bienvenido, {{ usuario.nombre }}</h2>
+
+{% if usuario.es_administrador %}
+  <p>Accesos de administrador:</p>
+  <ul>
+    <li><a href="{{ url_for('rutas.gestionar_juegos') }}">Gestionar Juegos</a></li>
+    <li><a href="{{ url_for('rutas.gestionar_participantes') }}">Gestionar Participantes</a></li>
+  </ul>
+{% else %}
+  <p>Accede a las estadísticas del torneo:</p>
+{% endif %}
+
+<a class="btn btn-info" href="{{ url_for('rutas.graficas') }}">Ver gráficas</a>
+{% endblock %}

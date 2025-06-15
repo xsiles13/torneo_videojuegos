@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block titulo %}Acceso{% endblock %}
+{% block contenido %}
+<h2>Iniciar sesión</h2>
+<form method="POST">
+  {{ formulario.hidden_tag() }}
+  <div class="mb-3">
+    {{ formulario.correo.label }} {{ formulario.correo(class="form-control") }}
+  </div>
+  <div class="mb-3">
+    {{ formulario.contraseña.label }} {{ formulario.contraseña(class="form-control") }}
+  </div>
+  <div class="mb-3 form-check">
+    {{ formulario.recordar(class="form-check-input") }}
+    {{ formulario.recordar.label(class="form-check-label") }}
+  </div>
+  <button type="submit" class="btn btn-primary">{{ formulario.enviar.label }}</button>
+</form>
+{% endblock %}

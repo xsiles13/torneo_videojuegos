@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block titulo %}Gestionar Juegos{% endblock %}
+{% block contenido %}
+<h2>Administrar Juegos</h2>
+
+<form method="POST">
+  {{ formulario.hidden_tag() }}
+  <div class="mb-3">
+    {{ formulario.nombre.label }} {{ formulario.nombre(class="form-control") }}
+  </div>
+  <button type="submit" class="btn btn-primary">{{ formulario.enviar.label }}</button>
+</form>
+
+<hr>
+
+<h3>Listado de Juegos</h3>
+<ul class="list-group">
+  {% for juego in juegos %}
+    <li class="list-group-item">{{ juego.nombre }}</li>
+  {% else %}
+    <p>No hay juegos registrados.</p>
+  {% endfor %}
+</ul>
+{% endblock %}

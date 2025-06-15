@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block titulo %}Gestionar Participantes{% endblock %}
+{% block contenido %}
+<h2>Administrar Participantes</h2>
+
+<form method="POST">
+  {{ formulario.hidden_tag() }}
+  <div class="mb-3">
+    {{ formulario.nombre.label }} {{ formulario.nombre(class="form-control") }}
+  </div>
+  <div class="mb-3">
+    {{ formulario.juego_id.label }} {{ formulario.juego_id(class="form-select") }}
+  </div>
+  <div class="mb-3">
+    {{ formulario.nivel.label }} {{ formulario.nivel(class="form-select") }}
+  </div>
+  <div class="mb-3">
+    {{ formulario.puntos.label }} {{ formulario.puntos(class="form-control") }}
+  </div>
+  <button type="submit" class="btn btn-primary">{{ formulario.enviar.label }}</button>
+</form>
+
+<hr>
+
+<h3>Listado de Participantes</h3>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Juego</th>
+      <th>Nivel</th>
+      <th>Puntos</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for p in participantes %}
+      <tr>
+        <td>{{ p.nombre }}</td>
+        <td>{{ p.juego.nombre if p.juego else 'Sin juego' }}</td>
+        <td>{{ p.nivel }}</td>
+        <td>{{ p.puntos }}</td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

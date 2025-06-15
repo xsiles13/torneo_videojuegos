@@ -1,0 +1,43 @@
+/* estilos.css */
+/* Estilos personalizados para la app del Torneo de Videojuegos */
+
+/* General */
+body {
+    background-color: #f8f9fa;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Encabezados */
+h2 {
+    color: #343a40;
+    margin-bottom: 20px;
+}
+
+/* Formularios */
+form input, form select, form button {
+    max-width: 500px;
+}
+
+/* Tablas */
+table {
+    margin-top: 20px;
+}
+
+th {
+    background-color: #343a40;
+    color: white;
+}
+
+td, th {
+    vertical-align: middle !important;
+}
+
+/* Botones */
+.btn {
+    min-width: 100px;
+}
+
+/* Alertas */
+.alert {
+    max-width: 500px;
+}

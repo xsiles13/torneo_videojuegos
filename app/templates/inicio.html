@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% block titulo %}Inicio{% endblock %}
+{% block contenido %}
+<div class="text-center">
+  <h1 class="mb-4">Bienvenido al Torneo de Videojuegos</h1>
+  <p><a href="{{ url_for('rutas.acceso') }}" class="btn btn-primary">Iniciar Sesión</a></p>
+</div>
+{% endblock %}
