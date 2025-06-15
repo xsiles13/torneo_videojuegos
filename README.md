@@ -30,20 +30,32 @@ Asegúrate de tener instalado:
 
 ## 📦 Instalación paso a paso (Ubuntu)
 
+
+### 1. Clonar el repositorio o descargar el proyecto
+
 ```bash
-# 1. Clonar el repositorio o descargar el proyecto
 git clone https://github.com/xsiles13/torneo_videojuegos.git
 cd torneo_videojuegos
+```
 
-# 2. Crear entorno virtual (opcional pero recomendado)
+### 2. Crear entorno virtual (opcional pero recomendado)
+
+```bash
 python3 -m venv entorno
 source entorno/bin/activate
+```
 
-# 3. Instalar dependencias
+### 3. Instalar dependencias
+
+```bash
 pip install -r requerimientos.txt
+```
 
-# 4. Crear la base de datos SQLite
-# (la base de datos se crea automáticamente al ejecutar la app por primera vez)
+### 4. Crear la base de datos SQLite
+La base de datos se crea automáticamente al ejecutar la app por primera vez.
 
-# 5. Ejecutar la aplicación
+### 5. Ejecutar la aplicación
+
+```bash
 python run.py
+```
