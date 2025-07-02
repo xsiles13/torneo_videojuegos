@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block titulo %}Registrar Puntuación - Torneo de Videojuegos{% endblock %}
+
+{% block contenido %}
+<div class="container mt-4">
+    <h2 class="mb-4">Registrar puntuación para "{{ juego.nombre }}"</h2>
+
+    <form method="POST">
+        <div class="mb-3">
+            <label for="nivel" class="form-label">Nivel</label>
+            <select class="form-select" id="nivel" name="nivel" required>
+                <option value="amateur">Amateur</option>
+                <option value="normal">Normal</option>
+                <option value="expert">Expert</option>
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <label for="puntos" class="form-label">Puntos obtenidos</label>
+            <input type="number" class="form-control" id="puntos" name="puntos" required min="0">
+        </div>
+
+        <button type="submit" class="btn btn-success">Registrar</button>
+        <a href="{{ url_for('rutas.perfil') }}" class="btn btn-secondary">Cancelar</a>
+    </form>
+</div>
+{% endblock %}
+
