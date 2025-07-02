@@ -77,7 +77,7 @@ config.py          # Configuración base
       sqlitebrowser
       ```
   
-    - Abrir la base de datos torneo.db (está dentro de la carpeta instance/ del proyecto) y modificar el campo es_administrador a 1
+    - Abrir la base de datos torneo.db (está dentro de la carpeta *instance/* del proyecto) y modificar el campo *es_administrador* a 1
   
     - Guardar los cambios y refrescar página web de la aplicación
 
