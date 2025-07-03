@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% block contenido %}
+<div class="container mt-4">
+    <h2>Panel de Administración</h2>
+
+    <h4 class="mt-4">Usuarios</h4>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Correo</th>
+                <th>Administrador</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for usuario in usuarios %}
+            <tr>
+                <td>{{ usuario.nombre }}</td>
+                <td>{{ usuario.correo }}</td>
+                <td>{{ 'Sí' if usuario.es_administrador else 'No' }}</td>
+                <td>
+                    <a href="{{ url_for('rutas.editar_usuario', id_usuario=usuario.id) }}" class="btn btn-sm btn-warning">Editar</a>
+                    <a href="{{ url_for('rutas.eliminar_usuario', id_usuario=usuario.id) }}" class="btn btn-sm btn-danger">Eliminar</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <h4 class="mt-5">Juegos</h4>
+    <a href="{{ url_for('rutas.crear_juego') }}" class="btn btn-success mb-2">Añadir nuevo juego</a>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for juego in juegos %}
+            <tr>
+                <td>{{ juego.nombre }}</td>
+                <td>
+                    <a href="{{ url_for('rutas.editar_juego', id_juego=juego.id) }}" class="btn btn-sm btn-warning">Editar</a>
+                    <a href="{{ url_for('rutas.eliminar_juego', id_juego=juego.id) }}" class="btn btn-sm btn-danger">Eliminar</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
+

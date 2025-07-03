@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+
+{% block titulo %}Perfil - Torneo de Videojuegos{% endblock %}
+
+{% block contenido %}
+<h2 class="mb-4">Perfil de {{ current_user.nombre }}</h2>
+
+<h4>Tus Participaciones:</h4>
+{% if participaciones %}
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Juego</th>
+                <th>Nivel</th>
+                <th>Puntos</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for participacion in participaciones %}
+                <tr>
+                    <td>{{ participacion.juego.nombre }}</td>
+                    <td>{{ participacion.nivel }}</td>
+                    <td>{{ participacion.puntos }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% else %}
+    <p>No tienes participaciones registradas aún.</p>
+{% endif %}
+
+<hr>
+
+<h4>Participar en un Juego:</h4>
+{% if juegos_disponibles %}
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Juego</th>
+                <th>Acción</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for juego in juegos_disponibles %}
+                <tr>
+                    <td>{{ juego.nombre }}</td>
+                    <td>
+                        <a href="{{ url_for('rutas.registrar_puntuacion', id_juego=juego.id) }}" class="btn btn-primary btn-sm">Participar</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% else %}
+    <p>No hay juegos disponibles por ahora.</p>
+{% endif %}
+{% endblock %}
+
